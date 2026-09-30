@@ -1,0 +1,86 @@
+target_chembl_id,target_name,n_compounds,n_allosteric,n_orthosteric,frac_allosteric
+CHEMBL3227,Metabotropic glutamate receptor 5,2522,1466,1056,0.5812846946867566
+CHEMBL3864,Tyrosine-protein phosphatase non-receptor type 11,2093,747,1346,0.3569039655996178
+CHEMBL1904,"Glutamate receptor ionotropic, NMDA 2B",1923,1178,745,0.6125845033801353
+CHEMBL5137,Metabotropic glutamate receptor 2,1663,549,1114,0.3301262778111846
+CHEMBL2564,Metabotropic glutamate receptor 5,1401,566,835,0.4039971448965025
+CHEMBL216,Muscarinic acetylcholine receptor M1,1302,351,951,0.2695852534562212
+CHEMBL2061,Retinoic acid receptor RXR-alpha,1283,601,682,0.46843335931410757
+CHEMBL2736,Metabotropic glutamate receptor 4,1215,493,722,0.405761316872428
+CHEMBL218,Cannabinoid receptor 1,1092,273,819,0.25
+CHEMBL1821,Muscarinic acetylcholine receptor M4,981,419,562,0.4271151885830785
+CHEMBL2492,Neuronal acetylcholine receptor subunit alpha-7,928,232,696,0.25
+CHEMBL3772,Metabotropic glutamate receptor 1,529,194,335,0.3667296786389414
+CHEMBL1878,Extracellular calcium-sensing receptor,516,129,387,0.25
+CHEMBL2851,Metabotropic glutamate receptor 2,379,122,257,0.32189973614775724
+CHEMBL4422,Free fatty acid receptor 1,292,73,219,0.25
+CHEMBL2035,Muscarinic acetylcholine receptor M5,268,136,132,0.5074626865671642
+CHEMBL1744525,Nicotinamide phosphoribosyltransferase,260,65,195,0.25
+CHEMBL256,Adenosine receptor A3,256,64,192,0.25
+CHEMBL2056,D(1A) dopamine receptor,224,56,168,0.25
+CHEMBL276,Muscarinic acetylcholine receptor M1,216,54,162,0.25
+CHEMBL4016,Glutamate receptor 2,214,60,154,0.2803738317757009
+CHEMBL2146302,"Glutaminase kidney isoform, mitochondrial",196,49,147,0.25
+CHEMBL1741186,Nuclear receptor ROR-gamma,188,47,141,0.25
+CHEMBL251,Adenosine receptor A2a,184,46,138,0.25
+CHEMBL4123,Neurotensin receptor type 1,164,41,123,0.25
+CHEMBL4477,Metabotropic glutamate receptor 1,160,40,120,0.25
+CHEMBL311,"Glutamate receptor ionotropic, NMDA 2B",156,39,117,0.25
+CHEMBL211,Muscarinic acetylcholine receptor M2,144,36,108,0.25
+CHEMBL3067,Metabotropic glutamate receptor 3,142,125,17,0.8802816901408451
+CHEMBL3879,Metabotropic glutamate receptor 7,139,113,26,0.8129496402877698
+CHEMBL317,Muscarinic acetylcholine receptor M4,134,110,24,0.8208955223880597
+CHEMBL5850,Mas-related G-protein coupled receptor member X1,132,44,88,0.3333333333333333
+CHEMBL401,"Glutamate receptor ionotropic, NMDA 2C",117,61,56,0.5213675213675214
+CHEMBL1784,Glucagon-like peptide 1 receptor,116,29,87,0.25
+CHEMBL2787,Metabotropic glutamate receptor 4,114,63,51,0.5526315789473685
+CHEMBL226,Adenosine receptor A1,112,28,84,0.25
+CHEMBL3471,Human immunodeficiency virus type 1 integrase,104,26,78,0.25
+CHEMBL4921,Urotensin-2 receptor,104,26,78,0.25
+CHEMBL262,Glycogen synthase kinase-3 beta,104,26,78,0.25
+CHEMBL1829,Histone deacetylase 3,100,25,75,0.25
+CHEMBL4781,Muscarinic acetylcholine receptor M2,96,24,72,0.25
+CHEMBL3691,Autotaxin,92,23,69,0.25
+CHEMBL1628472,Relaxin-3 receptor 1,85,22,63,0.25882352941176473
+CHEMBL3632452,Mucosa-associated lymphoid tissue lymphoma translocation protein 1,84,21,63,0.25
+CHEMBL3307224,Nonstructural protein 5A,80,20,60,0.25
+CHEMBL4973,Excitatory amino acid transporter 2,80,20,60,0.25
+CHEMBL4441,C-X-C chemokine receptor type 3,72,18,54,0.25
+CHEMBL3820,Hexokinase-4,68,17,51,0.25
+CHEMBL1991,Inhibitor of nuclear factor kappa-B kinase subunit beta,68,17,51,0.25
+CHEMBL1782,Farnesyl pyrophosphate synthase,64,16,48,0.25
+CHEMBL3714079,G-protein coupled receptor 84,64,16,48,0.25
+CHEMBL3037,Cannabinoid receptor 1,56,14,42,0.25
+CHEMBL3777,Metabotropic glutamate receptor 7,54,20,34,0.37037037037037035
+CHEMBL233,Mu-type opioid receptor,52,13,39,0.25
+CHEMBL253,Cannabinoid receptor 2,52,13,39,0.25
+CHEMBL236,Delta-type opioid receptor,52,13,39,0.25
+CHEMBL4282,RAC-alpha serine/threonine-protein kinase,52,13,39,0.25
+CHEMBL5201,Free fatty acid receptor 3,52,13,39,0.25
+CHEMBL204,Prothrombin,52,13,39,0.25
+CHEMBL2695,Focal adhesion kinase 1,48,12,36,0.25
+CHEMBL335,Tyrosine-protein phosphatase non-receptor type 1,48,12,36,0.25
+CHEMBL5373,Cannabinoid receptor 2,44,11,33,0.25
+CHEMBL4877,Neuropeptide Y receptor type 4,40,10,30,0.25
+CHEMBL4302,ATP-dependent translocase ABCB1,40,10,30,0.25
+CHEMBL4596,C-C chemokine receptor type 8,36,9,27,0.25
+CHEMBL1798,Cysteinyl leukotriene receptor 1,32,8,24,0.25
+CHEMBL5409,G-protein coupled bile acid receptor 1,32,8,24,0.25
+CHEMBL1812,Pancreatic triacylglycerol lipase,31,10,21,0.3225806451612903
+CHEMBL2413,C-C chemokine receptor type 1,28,7,21,0.25
+CHEMBL2888,Metabotropic glutamate receptor 3,28,7,21,0.25
+CHEMBL4109,"Glutamate receptor ionotropic, NMDA 2C",27,10,17,0.37037037037037035
+CHEMBL1293224,Microtubule-associated protein tau,24,6,18,0.25
+CHEMBL3974,Proteinase-activated receptor 1,24,6,18,0.25
+CHEMBL339,D(2) dopamine receptor,24,6,18,0.25
+CHEMBL228,Sodium-dependent serotonin transporter,24,6,18,0.25
+CHEMBL3091266,G-protein coupled receptor 39,24,6,18,0.25
+CHEMBL240,Voltage-gated inwardly rectifying potassium channel KCNH2,24,6,18,0.25
+CHEMBL313,Sodium-dependent serotonin transporter,24,6,18,0.25
+CHEMBL2024,Follicle-stimulating hormone receptor,20,5,15,0.25
+CHEMBL3085,Excitatory amino acid transporter 1,20,5,15,0.25
+CHEMBL217,D(2) dopamine receptor,20,5,15,0.25
+CHEMBL5845,Glycine receptor subunit alpha-1,20,5,15,0.25
+CHEMBL225,5-hydroxytryptamine receptor 2C,20,5,15,0.25
+CHEMBL1075173,Serine/threonine-protein kinase WNK1,17,12,5,0.7058823529411765
+CHEMBL3638339,Thioredoxin reductase,16,6,10,0.375

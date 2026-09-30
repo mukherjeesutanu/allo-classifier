@@ -1,0 +1,13 @@
+# pinned to the versions the committed results were produced with
+rdkit==2025.3.6
+scikit-learn==1.7.2
+lightgbm==4.6.0
+shap==0.51.0
+pandas==3.0.6
+numpy>=2.0
+scipy>=1.14
+matplotlib>=3.9
+pyarrow>=17
+tabulate>=0.9
+tqdm>=4.66
+pytest>=8.0

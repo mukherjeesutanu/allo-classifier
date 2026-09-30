@@ -1,0 +1,93 @@
+[
+  {
+    "step": "raw_sql",
+    "n_rows": 3263416,
+    "n_compounds": 1271221,
+    "n_targets": 8111,
+    "note": "single-protein potency rows with pChEMBL"
+  },
+  {
+    "step": "pchembl_floor",
+    "n_rows": 2386843,
+    "n_compounds": 1106357,
+    "n_targets": 7532,
+    "note": "pChEMBL >= 5.0"
+  },
+  {
+    "step": "data_validity",
+    "n_rows": 2386507,
+    "n_compounds": 1106357,
+    "n_targets": 7532,
+    "note": "drop flagged activities"
+  },
+  {
+    "step": "duplicates",
+    "n_rows": 2149109,
+    "n_compounds": 1106321,
+    "n_targets": 7532,
+    "note": "drop ChEMBL potential duplicates"
+  },
+  {
+    "step": "relation",
+    "n_rows": 2149109,
+    "n_compounds": 1106321,
+    "n_targets": 7532,
+    "note": "keep exact ('=') relations"
+  },
+  {
+    "step": "potency_ceiling",
+    "n_rows": 2149109,
+    "n_compounds": 1106321,
+    "n_targets": 7532,
+    "note": "<= 100000 nM"
+  },
+  {
+    "step": "labelled",
+    "n_rows": 2147406,
+    "n_compounds": 1105344,
+    "n_targets": 7527,
+    "note": "9527 allosteric / 1095817 orthosteric compounds, 977 unusable"
+  },
+  {
+    "step": "candidate_targets",
+    "n_rows": 23930,
+    "n_compounds": 11203,
+    "n_targets": 76,
+    "note": "pre-filter: targets with >= 5 compounds of both classes among all compound-target pairs (76 targets)"
+  },
+  {
+    "step": "standardised",
+    "n_rows": 11203,
+    "n_compounds": 11203,
+    "n_targets": 76,
+    "note": "RDKit cleanup / desalt / neutralise"
+  },
+  {
+    "step": "size_filter",
+    "n_rows": 11122,
+    "n_compounds": 11122,
+    "n_targets": 76,
+    "note": "8-70 heavy atoms"
+  },
+  {
+    "step": "dedup_inchikey",
+    "n_rows": 11115,
+    "n_compounds": 11115,
+    "n_targets": 76,
+    "note": "one row per structure; label-conflicting structures dropped"
+  },
+  {
+    "step": "matched_targets",
+    "n_rows": 7037,
+    "n_compounds": 7037,
+    "n_targets": 32,
+    "note": "targets carrying >= 5 compounds of BOTH classes in the final table (32 targets)"
+  },
+  {
+    "step": "final",
+    "n_rows": 7037,
+    "n_compounds": 7037,
+    "n_targets": 32,
+    "note": "3672 positives"
+  }
+]

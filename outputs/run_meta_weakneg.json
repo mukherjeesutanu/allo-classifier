@@ -1,0 +1,9 @@
+{
+  "runtime_s": 3112.88658285141,
+  "host": "node5",
+  "system": "Linux",
+  "machine": "x86_64",
+  "cpu_count": 24,
+  "n_compounds": 24177,
+  "chembl_version": "37"
+}

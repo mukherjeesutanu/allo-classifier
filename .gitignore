@@ -1,0 +1,16 @@
+# raw ChEMBL release (5.7 GB) - fetched by scripts/download_chembl.sh
+data/raw/
+# intermediate activity dump (~200 MB)
+data/processed/activities_raw.parquet
+
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+*.egg-info/
+.DS_Store
+
+# full 321k-compound variant (35 MB); rebuild with run_build_dataset.py --negatives all
+data/processed/dataset.parquet
+*.log

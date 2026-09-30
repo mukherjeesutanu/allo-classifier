@@ -1,0 +1,22 @@
+{
+  "n_unique_assays": 187979,
+  "n_assays_mentioning_allosteric": 1034,
+  "recall_on_mentions": 0.971953578336557,
+  "n_misses": 29,
+  "miss_breakdown": {
+    "ambiguous": 29
+  },
+  "n_assays_without_the_word": 186945,
+  "n_fired_without_the_word": 0,
+  "false_positive_rate_without_the_word": 0.0,
+  "random_sample_size": 2000,
+  "random_sample_called_allosteric": 0,
+  "n_assays_called_allosteric": 1005,
+  "audit_sample_written": 200,
+  "evidence_distribution": {
+    "orthosteric_weak": 183440,
+    "orthosteric_strict": 2763,
+    "allosteric": 1005,
+    "ambiguous": 771
+  }
+}

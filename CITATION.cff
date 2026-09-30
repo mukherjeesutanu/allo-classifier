@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: "allo-classifier: can a ligand-only model tell allosteric from orthosteric modulators?"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - given-names: "Sutanu"
+    family-names: "Mukhopadhyay"
+    orcid: "https://orcid.org/0000-0001-8243-2138"
+    affiliation: "S. N. Bose National Centre for Basic Sciences, Kolkata, India"
+repository-code: "https://github.com/mukherjeesutanu/allo-classifier"
+license: MIT
+version: "0.1.0"
+date-released: "2026-09-29"
+keywords:
+  - allostery
+  - cheminformatics
+  - machine-learning
+  - drug-discovery
+  - ChEMBL
+  - benchmark
+  - dataset-bias
+abstract: >
+  A reproducible benchmark asking whether ligand structure alone can separate
+  allosteric from orthosteric modulators. Labels are derived from ChEMBL assay
+  descriptions with audited, unit-tested text rules; the dataset uses a
+  matched-target design in which every retained target carries compounds of
+  both classes. Models are evaluated under random, scaffold-out, temporal and
+  target-out cross-validation, against a target-identity-only confound probe
+  and a physicochemical-property baseline, with class-stratified and paired
+  bootstrap confidence intervals and a label-permutation null control.

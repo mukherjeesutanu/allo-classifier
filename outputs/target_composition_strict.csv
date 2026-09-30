@@ -1,0 +1,33 @@
+target_chembl_id,target_name,n_compounds,n_allosteric,n_orthosteric,frac_allosteric
+CHEMBL1904,"Glutamate receptor ionotropic, NMDA 2B",1211,1203,8,0.9933938893476466
+CHEMBL2736,Metabotropic glutamate receptor 4,1014,597,417,0.5887573964497042
+CHEMBL1293224,Microtubule-associated protein tau,756,6,750,0.007936507936507936
+CHEMBL2061,Retinoic acid receptor RXR-alpha,656,616,40,0.9390243902439024
+CHEMBL262,Glycogen synthase kinase-3 beta,481,26,455,0.05405405405405406
+CHEMBL1293231,Nuclear receptor ROR-gamma,418,5,413,0.011961722488038277
+CHEMBL240,Voltage-gated inwardly rectifying potassium channel KCNH2,392,24,368,0.061224489795918366
+CHEMBL216,Muscarinic acetylcholine receptor M1,367,359,8,0.9782016348773842
+CHEMBL218,Cannabinoid receptor 1,314,298,16,0.9490445859872612
+CHEMBL217,D(2) dopamine receptor,256,8,248,0.03125
+CHEMBL251,Adenosine receptor A2a,99,47,52,0.47474747474747475
+CHEMBL226,Adenosine receptor A1,95,28,67,0.29473684210526313
+CHEMBL2039,Amine oxidase [flavin-containing] B,93,13,80,0.13978494623655913
+CHEMBL256,Adenosine receptor A3,79,64,15,0.810126582278481
+CHEMBL2056,D(1A) dopamine receptor,77,56,21,0.7272727272727273
+CHEMBL4282,RAC-alpha serine/threonine-protein kinase,73,13,60,0.1780821917808219
+CHEMBL1744525,Nicotinamide phosphoribosyltransferase,70,65,5,0.9285714285714286
+CHEMBL335,Tyrosine-protein phosphatase non-receptor type 1,65,16,49,0.24615384615384617
+CHEMBL1741186,Nuclear receptor ROR-gamma,64,47,17,0.734375
+CHEMBL233,Mu-type opioid receptor,54,25,29,0.46296296296296297
+CHEMBL204,Prothrombin,52,13,39,0.25
+CHEMBL253,Cannabinoid receptor 2,51,11,40,0.21568627450980393
+CHEMBL211,Muscarinic acetylcholine receptor M2,49,38,11,0.7755102040816326
+CHEMBL236,Delta-type opioid receptor,44,5,39,0.11363636363636363
+CHEMBL3691,Autotaxin,41,23,18,0.5609756097560976
+CHEMBL339,D(2) dopamine receptor,41,10,31,0.24390243902439024
+CHEMBL228,Sodium-dependent serotonin transporter,41,13,28,0.3170731707317073
+CHEMBL2695,Focal adhesion kinase 1,24,12,12,0.5
+CHEMBL3401,Nuclear receptor subfamily 1 group I member 2,18,11,7,0.6111111111111112
+CHEMBL1833,5-hydroxytryptamine receptor 2B,16,5,11,0.3125
+CHEMBL4302,ATP-dependent translocase ABCB1,15,10,5,0.6666666666666666
+CHEMBL225,5-hydroxytryptamine receptor 2C,11,5,6,0.45454545454545453
