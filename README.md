@@ -78,21 +78,28 @@ direction.
 
 ![Pooled vs within-target property differences](outputs/figures/fig_property_paradox.png)
 
-| property | pooled Δ | within-target Δ [95% CI] |
-|---|---|---|
-| cLogP | −0.20 | **+0.65** [−0.05–+1.35] ← sign flip |
-| BertzCT (complexity) | −23.5 | **+60.4** [−72.3–+193.0] ← sign flip |
-| MolWt | −31.7 | −1.8 [−32.8–+29.2] |
-| HBD | −1.0 | **−0.53** [−0.98–−0.09] |
-| aliphatic rings | 0.0 | **−0.34** [−0.57–−0.11] |
+Differences are in SD units so properties on different scales are comparable:
 
-This is a Simpson's paradox: the pooled difference mostly reports *which
-proteins each class came from*. The honest reading is that allosteric ligands in
-this set trend more lipophilic and more complex (folklore direction, though the
-95% interval still spans zero at 32 targets), and have significantly fewer
-H-bond donors and fewer aliphatic rings. **An earlier version of this README
-reported the pooled numbers as evidence against the folklore — that conclusion
-was wrong, and it was wrong in exactly the way this project warns about.**
+| property | pooled Δ (SD) | within-target Δ (SD) [95% CI] | folklore says |
+|---|---|---|---|
+| cLogP | −0.15 | **+0.49** [−0.04–+1.01] ← **sign flip** | more lipophilic ✓ trend |
+| BertzCT (complexity) | −0.09 | **+0.23** [−0.27–+0.73] ← **sign flip** | — |
+| FractionCSP3 | −0.51 | **−0.51** [−0.75–−0.26] | more 3-D ✗ **contradicted** |
+| HBD | −0.87 | **−0.46** [−0.85–−0.08] | less polar ✓ |
+| aliphatic rings | 0.00 | **−0.36** [−0.61–−0.12] | more 3-D ✗ |
+| MolWt | −0.38 | −0.02 [−0.39–+0.35] | — |
+
+This is a Simpson's paradox: the pooled difference largely reports *which
+proteins each class came from*. Read properly, the folklore splits in two.
+Lipophilicity goes the way the literature claims once you compare within a
+target (raw ΔcLogP +0.65 log units), though at 32 targets the interval still
+touches zero. But **three-dimensionality is contradicted**: allosteric ligands
+here have significantly *lower* sp3 fraction and *fewer* aliphatic rings, i.e.
+they are flatter, not more 3-D. Fewer H-bond donors holds up.
+
+**An earlier version of this README reported the pooled numbers as evidence
+against the folklore — that conclusion was wrong, and it was wrong in exactly
+the way this project warns about.**
 
 ## 4. What the model uses
 

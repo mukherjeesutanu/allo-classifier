@@ -57,6 +57,11 @@ def property_deltas(df: pd.DataFrame, cfg: Config, min_per_class: int | None = N
         a = tab.loc[tab["label"] == POS, p]
         o = tab.loc[tab["label"] == NEG, p]
         pooled = float(np.nanmedian(a) - np.nanmedian(o))
+        # Properties live on wildly different scales (BertzCT ~1e2, cLogP ~1e0),
+        # so raw deltas cannot be compared or plotted together. Dividing by the
+        # spread of the property makes every shift a standardised effect size.
+        spread = float(np.nanstd(tab[p].to_numpy(dtype=float)))
+        spread = spread if spread > 1e-12 else np.nan
 
         per_target = []
         for t in usable:
@@ -79,6 +84,11 @@ def property_deltas(df: pd.DataFrame, cfg: Config, min_per_class: int | None = N
             {
                 "property": p,
                 "pooled_delta": pooled,
+                "property_sd": spread,
+                "pooled_delta_std": pooled / spread,
+                "within_target_delta_std": mean_within / spread,
+                "within_lo_std": lo / spread,
+                "within_hi_std": hi / spread,
                 "within_target_delta": mean_within,
                 "within_target_median": float(np.median(per_target)) if per_target.size else np.nan,
                 "within_lo": lo,
@@ -96,5 +106,5 @@ def property_deltas(df: pd.DataFrame, cfg: Config, min_per_class: int | None = N
             }
         )
     return pd.DataFrame(rows).sort_values(
-        "within_target_delta", key=lambda s: -s.abs()
+        "within_target_delta_std", key=lambda s: -s.abs()
     ).reset_index(drop=True)

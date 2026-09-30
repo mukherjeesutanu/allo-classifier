@@ -122,18 +122,21 @@ def fig_property_paradox(chem: pd.DataFrame, path: Path, top_n: int = 10) -> Non
     Where the two bars point in opposite directions the pooled comparison is
     reporting which targets each class came from, not the binding mode.
     """
+    pooled_col = "pooled_delta_std" if "pooled_delta_std" in chem else "pooled_delta"
+    within_col = "within_target_delta_std" if "within_target_delta_std" in chem else "within_target_delta"
+    lo_col = "within_lo_std" if "within_lo_std" in chem else "within_lo"
+    hi_col = "within_hi_std" if "within_hi_std" in chem else "within_hi"
     sub = chem.head(top_n).iloc[::-1]
     y = np.arange(len(sub))
     h = 0.38
-    fig, ax = plt.subplots(figsize=(6.2, 0.42 * len(sub) + 1.4))
-    ax.barh(y + h / 2, sub["pooled_delta"], height=h, color=SLATE, label="pooled (confounded)")
-    ax.barh(y - h / 2, sub["within_target_delta"], height=h, color=CORAL,
-            label="within-target")
+    fig, ax = plt.subplots(figsize=(6.6, 0.42 * len(sub) + 1.5))
+    ax.barh(y + h / 2, sub[pooled_col], height=h, color=SLATE, label="pooled (confounded)")
+    ax.barh(y - h / 2, sub[within_col], height=h, color=CORAL, label="within-target")
     err = np.vstack([
-        sub["within_target_delta"] - sub["within_lo"],
-        sub["within_hi"] - sub["within_target_delta"],
+        sub[within_col] - sub[lo_col],
+        sub[hi_col] - sub[within_col],
     ])
-    ax.errorbar(sub["within_target_delta"], y - h / 2, xerr=err, fmt="none",
+    ax.errorbar(sub[within_col], y - h / 2, xerr=err, fmt="none",
                 ecolor="#5c2318", elinewidth=1, capsize=2.5)
     ax.axvline(0, color="#333", lw=1)
     ax.set_yticks(y)
@@ -141,9 +144,10 @@ def fig_property_paradox(chem: pd.DataFrame, path: Path, top_n: int = 10) -> Non
         [f"{r.property} *" if r.sign_flip else r.property for r in sub.itertuples()],
         fontsize=8,
     )
-    ax.set_xlabel("median(allosteric) − median(orthosteric)")
-    ax.set_title("Pooled comparisons invert real ones  (* = sign flip)",
-                 loc="left", fontsize=9.5)
+    ax.set_xlabel("standardised Δ:  [median(allosteric) − median(orthosteric)] / SD")
+    ax.set_title("Pooled property comparisons invert the within-target ones\n"
+                 "(* = sign flip; bars in SD units so scales are comparable)",
+                 loc="left", fontsize=9)
     ax.legend(frameon=False, fontsize=8, loc="lower right")
     fig.tight_layout()
     fig.savefig(path)

@@ -57,6 +57,9 @@ Label tiers:
 The bootstrap CI above resamples compounds *within* each fold, so it measures within-fold sampling noise: **0.723 [0.697–0.748]**. A claim about generalising to a *new target* must instead carry the spread between held-out target groups, which is much wider: per-fold AUCs [0.5537, 0.8557, 0.8482, 0.6871, 0.6712], giving **0.723 [0.564–0.883]** (Student-t across 5 folds). The wider interval is the honest one for the headline claim.
 
 
+*The temporal split is a single chronological holdout, so its `fold SD` is 0 by construction — one fold, not zero variability.*
+
+
 ### Pooling artefact
 
 The target-identity probe is the worked example. Under the target-out split its one-hot features are all zero for a held-out target, so every prediction inside a fold is the same constant and the per-fold AUC is exactly **0.500** — chance, as it must be. Pooling those per-fold constants into one ROC instead reports **0.335**: an ordering invented between folds, not a below-chance model. Every headline number here is a fold-mean.
@@ -68,18 +71,18 @@ Median(allosteric) − median(orthosteric) for each property, computed two ways.
 
 | property       |   pooled Δ | within-target Δ [95% CI]   |   n_targets | flips   |
 |:---------------|-----------:|:---------------------------|------------:|:--------|
-| BertzCT        |     -23.54 | +60.36 [-72.31–+193.04]    |          32 | **yes** |
-| TPSA           |     -12.55 | -4.74 [-12.54–+3.05]       |          32 |         |
-| LabuteASA      |     -17.6  | -3.41 [-16.52–+9.70]       |          32 |         |
-| MolWt          |     -31.7  | -1.79 [-32.82–+29.23]      |          32 |         |
+| FractionCSP3   |      -0.08 | -0.08 [-0.12–-0.04]        |          32 |         |
+| NumSpiroAtoms  |       0    | -0.06 [-0.15–+0.02]        |          32 |         |
 | cLogP          |      -0.2  | +0.65 [-0.05–+1.35]        |          32 | **yes** |
 | HBD            |      -1    | -0.53 [-0.98–-0.09]        |          32 |         |
-| HeavyAtoms     |      -3    | -0.48 [-2.94–+1.97]        |          32 |         |
-| StereoCentres  |       0    | -0.38 [-0.86–+0.11]        |          32 |         |
 | AliphaticRings |       0    | -0.34 [-0.57–-0.11]        |          32 |         |
 | AromaticRings  |       0    | +0.31 [-0.10–+0.73]        |          32 |         |
-| RotB           |      -1    | -0.27 [-1.40–+0.87]        |          32 |         |
+| StereoCentres  |       0    | -0.38 [-0.86–+0.11]        |          32 |         |
+| NumBridgeheads |       0    | -0.12 [-0.30–+0.05]        |          32 |         |
 | RingCount      |       0    | -0.23 [-0.69–+0.22]        |          32 |         |
+| BertzCT        |     -23.54 | +60.36 [-72.31–+193.04]    |          32 | **yes** |
+| TPSA           |     -12.55 | -4.74 [-12.54–+3.05]       |          32 |         |
+| RotB           |      -1    | -0.27 [-1.40–+0.87]        |          32 |         |
 
 ## Applicability domain
 
@@ -96,19 +99,22 @@ Maximum ECFP4 Tanimoto from each test compound to the training set. This is the 
 
 Differences between fold-mean AUCs, bootstrapped within folds on identical resamples for both models.
 
-| split    | question                         | Δ fold ROC-AUC [95% CI]   |   p_two_sided | significant   |
-|:---------|:---------------------------------|:--------------------------|--------------:|:--------------|
-| random   | structure beyond physchem        | +0.022 [+0.019–+0.024]    |         0     | **yes**       |
-| random   | chemistry beyond target identity | +0.045 [+0.041–+0.049]    |         0     | **yes**       |
-| random   | fingerprint beyond physchem      | +0.022 [+0.019–+0.025]    |         0     | **yes**       |
-| scaffold | structure beyond physchem        | +0.061 [+0.055–+0.066]    |         0     | **yes**       |
-| scaffold | chemistry beyond target identity | +0.051 [+0.045–+0.057]    |         0     | **yes**       |
-| scaffold | fingerprint beyond physchem      | +0.061 [+0.055–+0.067]    |         0     | **yes**       |
-| temporal | structure beyond physchem        | +0.087 [+0.061–+0.114]    |         0     | **yes**       |
-| temporal | chemistry beyond target identity | +0.358 [+0.321–+0.399]    |         0     | **yes**       |
-| temporal | fingerprint beyond physchem      | +0.078 [+0.050–+0.110]    |         0     | **yes**       |
-| target   | structure beyond physchem        | +0.100 [+0.077–+0.124]    |         0     | **yes**       |
-| target   | fingerprint beyond physchem      | +0.021 [-0.009–+0.054]    |         0.195 | no            |
+| split    | question                         | Δ fold ROC-AUC [95% CI]   | p        | significant   |
+|:---------|:---------------------------------|:--------------------------|:---------|:--------------|
+| random   | structure beyond physchem        | +0.022 [+0.019–+0.024]    | < 0.0005 | **yes**       |
+| random   | chemistry beyond target identity | +0.045 [+0.041–+0.049]    | < 0.0005 | **yes**       |
+| random   | fingerprint beyond physchem      | +0.022 [+0.019–+0.025]    | < 0.0005 | **yes**       |
+| scaffold | structure beyond physchem        | +0.061 [+0.055–+0.066]    | < 0.0005 | **yes**       |
+| scaffold | chemistry beyond target identity | +0.051 [+0.045–+0.057]    | < 0.0005 | **yes**       |
+| scaffold | fingerprint beyond physchem      | +0.061 [+0.055–+0.067]    | < 0.0005 | **yes**       |
+| temporal | structure beyond physchem        | +0.087 [+0.061–+0.114]    | < 0.0005 | **yes**       |
+| temporal | chemistry beyond target identity | +0.358 [+0.321–+0.399]    | < 0.0005 | **yes**       |
+| temporal | fingerprint beyond physchem      | +0.078 [+0.050–+0.110]    | < 0.0005 | **yes**       |
+| target   | structure beyond physchem        | +0.100 [+0.077–+0.124]    | < 0.0005 | **yes**       |
+| target   | fingerprint beyond physchem      | +0.021 [-0.009–+0.054]    | 0.195    | no            |
+
+*`p` is a bootstrap tail fraction over 2000 resamples; `< 0.0005` means no resample crossed zero, not p = 0.*
+
 
 ## What the model keys on
 
